@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="print"></p>
+
+        <script>
+            
+            var klosser = [
+            [2, 3, 8], 
+            [4, 3, 2],
+            [2, 4, 7],
+            [6, 5, 1]
+            ];
+            function checkSize(bricks){
+                
+                var biggest = (bricks[0][0] * bricks[0][1] * bricks[0][2]);
+                
+                for(i = 0; i < bricks.length; i++){
+                    var brick = (bricks[i][0] * bricks[i][1] * bricks[i][2]);
+                    
+                    if (brick > biggest){
+                        biggest = brick;
+                    }
+                
+                }
+                return biggest;
+            }
+            document.getElementById("print").innerHTML = checkSize(klosser);
+
+        
+        </script>
+
+    </body>
+</html>

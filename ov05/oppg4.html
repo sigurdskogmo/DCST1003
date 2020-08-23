@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="print"></p>
+
+        <script>
+            
+            function countFromTo(from, to){
+                var myArray = [];
+                while (from <= to){
+                    myArray[from - 1] = from;
+                    from++;
+                }
+                return myArray;
+            }
+            function print(argument){
+                document.getElementById("print").innerHTML = argument;
+            }
+            var array = countFromTo(1, 10);
+            print(array);
+
+        </script>
+
+    </body>
+</html>

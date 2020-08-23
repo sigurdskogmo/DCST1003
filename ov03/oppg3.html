@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        
+        <input type="text" id="inndata" placeholder="Skriv inn H, B eller U"><br>
+        <button onclick="minFunksjon()">Tipp</button>
+        <p id="resultat"></p>
+
+        <script>
+        
+            function minFunksjon(){
+                var svar = document.getElementById("inndata").value;
+
+                if (svar == 'H'){
+                    document.getElementById("resultat").innerHTML = "Hjemme";
+                }
+                else if (svar == 'B'){
+                    document.getElementById("resultat").innerHTML = "Borte";
+                }
+                else if (svar == 'U'){
+                    document.getElementById("resultat").innerHTML = "Uavgjort";
+                }
+                else{
+                    document.getElementById("resultat").innerHTML = 
+                    "Skriv inn enten H, B eller U!";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

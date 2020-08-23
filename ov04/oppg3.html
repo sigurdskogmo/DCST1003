@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        
+        <input type="text" id="inndata1" placeholder="Skriv inn et tall"><br>
+        <input type="text" id="inndata2" placeholder="Skriv inn et større tall"><br>
+        <button type="button" onclick="print()">Kjør</button>
+        
+        <p id="utskrift"></p>
+
+        <script>
+            function print(){
+                var tekst = "";
+                
+                var fra = parseInt(document.getElementById("inndata1").value);
+                var til = parseInt(document.getElementById("inndata2").value);
+                while (fra <= til){
+                    tekst += "Jeg er tall nummer " + fra + "<br>";
+                    fra++;
+                }
+                document.getElementById("utskrift").innerHTML = tekst;
+            }
+            
+        </script>
+
+    </body>
+</html>

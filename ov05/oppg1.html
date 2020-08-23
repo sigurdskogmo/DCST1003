@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="print"></p>
+
+        <script>
+        
+            function agecheck(age){
+                var svar = "";
+                if (age >= 13 && age < 20){
+                    svar = "Du er tenåring";
+                }
+                else{
+                    svar = "Du er ikke tenåring";
+                }
+                return svar;
+            }
+            document.getElementById("print").innerHTML = agecheck(12);
+        </script>
+
+    </body>
+</html>

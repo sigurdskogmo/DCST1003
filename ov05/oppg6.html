@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="print"></p>
+
+        <script>
+            
+            function myFunction(years){
+                var age = [30, 19, 52, 50];
+                var navn = ["Kari", "Per", "Pål", "Jens"];
+                var tekst = "";
+
+                for(i = 0; i < age.length; i++){
+                    tekst += "Om " + years + " år er " + navn[i] + " " + (age[i] + years) + " år gammel<br>";
+                }
+                document.getElementById("print").innerHTML = tekst;
+            }
+            myFunction(4);
+        
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+  <body>
+    <h1>Find the hidden button and click it!</h1>
+    <p><b>How many buttons can you click in 15 seconds?</b></p>
+    <div>Time left:</div>
+    <div id="timerText"></div>
+    <div><br />Points:</div>
+    <div id="pointsText"></div>
+    <button id="theButton">The button</button>
+  </body>
+  <script>
+    let points = 0;
+    let pointsText = document.getElementById("pointsText");
+    pointsText.innerText = points;
+
+    let theButton = document.getElementById("theButton");
+    let hideAndMove = () => {
+      theButton.style.position = "absolute";
+      // Hide theButton
+      theButton.style.visibility = "hidden";
+      // Move theButton to a random position
+      theButton.style.left = Math.random() * screen.width + "px";
+      theButton.style.top = Math.random() * screen.height + "px";
+    };
+    hideAndMove(); //hide the button from the beggining of the program.
+
+    // Show theButton when the mouse cursor is close to it
+    window.onmousemove = event => {
+      let rect = theButton.getBoundingClientRect();
+      let centerX = (rect.right + rect.left) / 2;
+      let centerY = (rect.bottom + rect.top) / 2;
+
+      // Calculate distance between mouse cursor and center of theButton
+      let distance = Math.sqrt(
+        Math.pow(centerX - event.clientX, 2) +
+          Math.pow(centerY - event.clientY, 2)
+      );
+
+      if (distance < 100 && theButton.style.visibility == "hidden") {
+        theButton.style.visibility = "visible";
+      }
+    };
+    theButton.onclick = () => {
+      points++;
+      pointsText = document.getElementById("pointsText");
+      pointsText.innerText = points;
+      hideAndMove();
+    };
+    var myVar;
+    function timerCountdown() {
+      var seconds_left = 15;
+      document.getElementById("timerText").innerText =
+        seconds_left + " seconds";
+      var interval = setInterval(function() {
+        document.getElementById("timerText").innerText =
+          --seconds_left + " seconds";
+
+        if (seconds_left <= 1) {
+          document.getElementById("timerText").innerText = "1 second";
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
+
+    function myCountdown() {
+      myVar = setTimeout(function() {
+        alert(
+          "Times up, you got " +
+            points +
+            " points. Hit OK or close this box to restart."
+        );
+        points = 0;
+        myCountdown();
+        timerCountdown();
+        hideAndMove();
+        pointsText = document.getElementById("pointsText");
+        pointsText.innerText = points;
+      }, 15000);
+    }
+
+    myCountdown();
+    timerCountdown();
+  </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!--<script src="script.js"></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        <input type="text" id="inndata" placeholder="Skriv inn et tall"><br>
+        <button onclick="beregn()">Beregn</button>
+        <p id="demo"></p>
+
+        <script>
+        
+            function beregn(){
+                var tallHalv;
+                var tallDobbel;
+                var tallTreDobbel;
+                var tallKvadrert;
+
+                var tall = parseFloat(document.getElementById("inndata").value);
+                
+                if (typeof tall === 'number'){
+                    tallHalv = tall / 2;
+                    tallDobbel = tall * 2;
+                    tallTreDobbel = tall * 3;
+                    tallKvadrert = tall * tall;
+
+                    document.getElementById("demo").innerHTML =
+                    "Tallet " + tall + " halvert er " + tallHalv + 
+                    ". Det dobbelte av tallet er " + tallDobbel + 
+                    " mens det tredobbelte er " + tallTreDobbel + 
+                    ". Ganger du tallet med seg selv får du " + tallKvadrert + ".";
+                    
+                }
+                else{
+                    document.getElementById("demo").innerHTML = "Feil! Skriv inn et tall!"
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <input type="text" id="input1" placeholder="Navn på vare:"><input type="text" id="price1" placeholder="Pris på vare:"><br>
+      <input type="text" id="input2" placeholder="Navn på vare:"><input type="text" id="price2" placeholder="Pris på vare:"><br>
+      <input type="text" id="input3" placeholder="Navn på vare:"><input type="text" id="price3" placeholder="Pris på vare:"><br>
+      <input type="text" id="input4" placeholder="Navn på vare:"><input type="text" id="price4" placeholder="Pris på vare:"><br>
+      <input type="text" id="input5" placeholder="Navn på vare:"><input type="text" id="price5" placeholder="Pris på vare:"><br>
+      <button type="button" onclick="addInArray()">Legg til</button><button type="button" onclick="avgSumHighestLowest()">Knapp</button>
+      <p id="utskrift"></p>
+
+      <script type="text/javascript">
+
+        var varer = [];
+        var priser = [];
+        function addInArray(){
+            for(i = 0; i < 5; i++){
+                varer[i] = document.getElementById('input' + (i + 1)).value;
+                priser[i] = parseFloat(document.getElementById('price' + (i + 1)).value);
+            }
+            //document.getElementById('utskrift').innerHTML = varer;
+        }
+        function avgSumHighestLowest(){
+            var sum = 0;
+            var avg = 0;
+            var high = 0;
+            var low = 0;
+
+            for(k = 0; k < priser.length; k++){
+                sum += priser[k]; //summen av alle prisene
+            }
+            avg = sum / priser.length; //Gjennomsnittsprisen
+            high = Math.max.apply(Math, priser);
+            low = Math.min.apply(Math, priser);
+
+            document.getElementById('utskrift').innerHTML = "Gjennomsnittsprisen er " + avg +
+            ",- Summen av alle varene er " + sum + ",- Den dyreste varen koster " + high +
+            ",- og den billigste " + low + ",-";
+        }
+
+      </script>
+  </body>
+</html>

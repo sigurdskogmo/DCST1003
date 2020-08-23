@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <input type="text" id="username" placeholder="Brukernavn"><br>
+        <input type="password" id="password" placeholder="Passord"><br>
+        <button onclick="login()">Logg inn</button>
+        <p id="utskrift"></p>
+
+        <script>
+        
+        var tries = 0;
+        
+        function login(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var tekst = "";
+
+            var users = [
+                ["sigurd", "passord123", 0],
+                ["test", "123passord", 3],
+                ["admin", "Passw0rd.", 0]
+            ]
+            
+            for(i = 0; i < users.length; i++){
+                if ((users[i][2]) < 3){
+                    if (username == users[i][0] && password == users[i][1]){
+                        tekst = "Vellykket innlogging!";
+                        break;
+                    }
+                    else{
+                        tekst = "Feil passord/brukernavn!";
+                        users[i][2]++;
+                    }
+                }
+                else if ((users[i][2]) > 3){
+                    tekst = "For mange forsøk!";
+                    break;
+                }
+                else{
+                    tekst = "Brukernavnet eksisterer ikke";
+                }
+            }
+            document.getElementById("utskrift").innerHTML = tekst;
+        }
+        
+        
+        </script>
+
+    </body>
+</html>

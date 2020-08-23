@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        <input type="text" id="num" placeholder="Skriv inn et tall" onkeyup="sjekk()">
+        <p id="utskrift"></p>
+
+        <script>
+        
+        function sjekk(){
+            var tall = document.getElementById("num").value;
+            var utskrift = "";
+            
+            for(i = 2; i < tall; i++){
+                if(tall % i === 0){
+                    utskrift = "Tallet " + tall + " er ikke et primtall.";
+                    break;
+                }
+                else{
+                    utskrift = "Tallet " + tall + " er et primtall.";
+                }
+            }
+            document.getElementById("utskrift").innerHTML = utskrift;
+        }
+        </script>
+    </body>
+</html>

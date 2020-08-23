@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="utskrift"></p>
+
+        <script>
+        
+        var utskrift = "";
+        
+        for(i = 10; i > 0; i--){
+            for(j = 1; j <= i; j++){
+                utskrift += j + " ";
+            }
+            utskrift += "<br>";
+        }
+        document.getElementById("utskrift").innerHTML = utskrift;
+        
+        
+        </script>
+
+    </body>
+</html>

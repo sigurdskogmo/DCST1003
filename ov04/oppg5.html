@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="utskrift">Tekst</p>
+
+        <script>
+            
+            var bottles = 10;
+            
+            var gb = " green bottles, hanging on a wall,<br>";
+            var gb2 = " green bottle, hanging on a wall,<br>";
+            var af = "If 1 green bottle were to accidentally fall<br>There'd be ";
+            var af2 = " green bottles, hanging on the wall<br><br>";
+            
+            var sang = "";
+
+            while(bottles > 0){
+                if (bottles > 1){
+                    var lyric1 = bottles + gb;
+                    sang += lyric1 + lyric1;
+                    bottles -= 1;
+                    var lyric2 = af + bottles + af2;
+                    sang += lyric2;
+                }
+                else{
+                    sang += bottles + gb2 + bottles + gb2 + af + "no green bottles, hanging on the wall.";
+                    bottles -= 1;
+                }
+            }
+            document.getElementById("utskrift").innerHTML = sang;
+        
+        </script>
+
+    </body>
+</html>

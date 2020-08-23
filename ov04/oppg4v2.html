@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        <p id="utskrift"></p>
+
+        <script>
+            var tekst = "<table>";
+            for(i = 10; i < 20; i++){
+                tekst += "<tr>"
+                for(j = 1; j < 20; j++){
+                    tekst += "<td>" + j * i + "</td>";
+                }
+                tekst += "</tr>";
+            }
+            tekst += "</table>";
+            document.getElementById("utskrift").innerHTML = tekst;
+        </script>
+
+    </body>
+</html>

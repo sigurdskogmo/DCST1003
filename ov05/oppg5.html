@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        
+        <p id="print"></p>
+
+        <script>
+            
+            var myArray = [];
+            function countFromTo(from, to){
+                while (from <= to){
+                    myArray[from - 1] = from;
+                    from++;
+                }
+                tekst = myArray[(myArray.length) - 1];
+                document.getElementById("print").innerHTML = tekst;
+            }
+            countFromTo(2, 15);
+        </script>
+
+    </body>
+</html>

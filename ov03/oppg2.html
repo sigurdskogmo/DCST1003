@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!--<script src="script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        
+        <input type="text" id="inndata" placeholder="Hvor gammel er du?"><br>
+        <button onclick="beregn()">OK</button>
+        <p id="demo"></p>
+        
+        <script>
+        
+            function beregn(){
+                var alder = parseInt(document.getElementById("inndata").value);
+
+                if (typeof alder === 'number'){
+                    if (alder >= 67){
+                        document.getElementById("demo").innerHTML = 
+                        "Du er myndig. Du er dessuten pensjonist.";
+                    }
+                    else if (alder >= 18){
+                        document.getElementById("demo").innerHTML = "Du er myndig.";
+                    }
+                    
+                    else{
+                        document.getElementById("demo").innerHTML = "Du er ikke myndig enda.";
+                    }
+                }
+                else{
+                    document.getElementById("demo").innerHTML = "Feil, du må skrive inn et tall!";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

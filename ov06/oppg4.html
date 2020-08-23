@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <!--<input type="text" id="input1" placeholder="Navn på vare:"><input type="text" id="price1" placeholder="Pris på vare:"><br>
+      <input type="text" id="input2" placeholder="Navn på vare:"><input type="text" id="price2" placeholder="Pris på vare:"><br>
+      <input type="text" id="input3" placeholder="Navn på vare:"><input type="text" id="price3" placeholder="Pris på vare:"><br>
+      <input type="text" id="input4" placeholder="Navn på vare:"><input type="text" id="price4" placeholder="Pris på vare:"><br>
+      <input type="text" id="input5" placeholder="Navn på vare:"><input type="text" id="price5" placeholder="Pris på vare:"><br>
+      <button type="button" onclick="addInArray()">Legg til</button>-->
+      <input type="text" id="search">
+      <button type="button" onclick="searchFor()">Søk etter vare</button>
+      <p id="utskrift"></p>
+
+      <script type="text/javascript">
+
+        var varer = ["Coca Cola", "Fisk", "Ost", "Brød", "Melk"];
+        var priser = [20, 60, 50, 30, 25];
+        /*function addInArray(){
+            for(i = 0; i < 5; i++){
+                varer[i] = document.getElementById('input' + (i + 1)).value;
+                priser[i] = parseFloat(document.getElementById('price' + (i + 1)).value);
+            }
+            //document.getElementById('utskrift').innerHTML = varer;
+        }*/
+        function searchFor(){
+            var svar = "";
+            for(i = 0; i < varer.length; i++){
+                if (document.getElementById('search').value == varer[i]){
+                    svar = "Varen " + varer[i] + " koster " + priser[i] + ",-";
+                    break;
+                }
+                else{
+                    svar = "Varen finnes ikke.";
+                }
+            }
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+
+      </script>
+  </body>
+</html>

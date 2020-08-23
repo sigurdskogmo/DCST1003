@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        <form>
+            <input type="checkbox" id="chk" onchange="calculate()"><p id="txt"></p>
+        </form>
+        <p id="utskrift"></p>
+
+        <script>
+        
+        function calculate(){
+            var checkbox = document.getElementById("chk").checked;
+            var utskrift = "";
+            var i;
+            var tekst;
+            
+            if(checkbox == true){
+                i = 2;
+                tekst = "Partall";
+            }
+            else{
+                i = 1;
+                tekst = "Oddetall";
+            }
+            
+            for(i; i <= 10; i += 2){
+                utskrift += i + " ";
+            }
+            document.getElementById("utskrift").innerHTML = utskrift;
+            document.getElementById("txt").innerHTML = tekst
+        }
+        
+        
+        </script>
+
+    </body>
+</html>

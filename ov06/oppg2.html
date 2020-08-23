@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <input type="text" id="input1"><br>
+      <input type="text" id="input2"><br>
+      <input type="text" id="input3"><br>
+      <input type="text" id="input4"><br>
+      <input type="text" id="input5"><br>
+      <button type="button" onclick="addInArray()">Legg til</button>
+      <p id="utskrift"></p>
+
+      <script type="text/javascript">
+
+        var varer = [];
+        function addInArray(){
+            for(i = 0; i < 5; i++){
+                varer[i] = document.getElementById('input' + (i + 1)).value;
+            }
+            document.getElementById('utskrift').innerHTML = varer;
+        }
+
+      </script>
+  </body>
+</html>

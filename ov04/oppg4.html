@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        <p id="utskrift"></p>
+
+        <script>
+            var tekst = "";
+            for(i = 10; i < 20; i++){
+                for(j = 1; j < 20; j++){
+                    tekst += i + " ganger " + j + " er " + (j * i) + "<br>";
+                }
+            }
+            document.getElementById("utskrift").innerHTML = tekst;
+        </script>
+
+    </body>
+</html>

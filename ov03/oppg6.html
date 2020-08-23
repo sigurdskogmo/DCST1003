@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        
+        <input type="text" id="alder" placeholder="Skriv inn alder"><br>
+        <input type="text" id="distanse" placeholder="Lengde på busstur i km"><br>
+        <button onclick="beregn()">Beregn kostnad</button>
+        <p id="resultat"></p>
+
+        <script>
+        
+            function beregn(){
+                var pris, reisepris, distanse, alder;
+                
+                distanse = parseFloat(document.getElementById("distanse").value);
+                alder = parseFloat(document.getElementById("alder").value);
+
+                reisepris = distanse * 3.52;
+
+                if (typeof distanse === 'number' && typeof alder === 'number'){
+                    if (alder < 12){
+                        pris = reisepris * 0.5;
+                        document.getElementById("resultat").innerHTML = 
+                        "Barnepris: " + pris.toFixed(2) + ",-";
+                    }
+                    else if (alder >= 67){
+                        pris = reisepris * 0.8;
+                        document.getElementById("resultat").innerHTML = 
+                        "Pensjonistpris: " + pris.toFixed(2) + ",-";
+                    }
+                    else{
+                        document.getElementById("resultat").innerHTML = 
+                        "Voksenpris: " + reisepris.toFixed(2) + ",-";
+                    }
+                }
+                else{
+                    document.getElementById("resultat").innerHTML = 
+                        "Du må skrive inn tall i begge feltene!";
+                }
+            }
+        
+        </script>
+
+    </body>
+</html>

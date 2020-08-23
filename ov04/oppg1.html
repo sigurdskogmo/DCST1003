@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!---<script type="text/javascript" src=""></script>-->
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+    </head>
+    <body>
+        <p id="utskrift"></p>
+
+        <script>
+            
+            var tekst = "";
+            /*
+            
+            for(i = 0; i < 7; i++){
+                tekst += "Jeg er tall nummer " + (i + 1) + "<br>";
+            }
+            
+            */
+            
+            var i = 1;
+            while (i <= 7){
+                tekst += "Jeg er tall nummer " + i + "<br>";
+                i++;
+            }
+            document.getElementById("utskrift").innerHTML = tekst;
+
+        </script>
+
+    </body>
+</html>
